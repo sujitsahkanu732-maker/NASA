@@ -19,7 +19,7 @@ function Navbar() {
           <Link to="/space-weather" className="hover:text-yellow-300 transition duration-200">Space Weather</Link>
           <Link to="/tech-transfer" className="hover:text-yellow-300 transition duration-200">Tech Patents</Link> 
            <Link to="/media" className="hover:text-yellow-300 transition duration-200">NASA Media Library</Link> 
-          <Link to="/Contact" className="hover:text-yellow-300 transition duration-200">Contact</Link>
+         
           
         </div>
       </div>

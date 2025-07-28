@@ -7,7 +7,7 @@ import MarsRover from './Pages/MarsRover'
 import ISSLocation from './Pages/ISSLocation'
 import ISSMap from './Pages/ISSMap'
 import SpaceWeather from './Pages/SpaceWeather'
-import Contact from './Pages/Contact'
+//import Contact from './Pages/Contact'
 import TechTransfer from './Pages/TeachTransfer'
 import NasaMediaLibrary from './Pages/NasaMediaLibrary'
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/space-weather" element={<SpaceWeather/>}/>
           <Route path="/tech-transfer" element={<TechTransfer/>}/>
           <Route path="/media" element={<NasaMediaLibrary/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
+          
         </Routes>
       </div>
       <Footer/>

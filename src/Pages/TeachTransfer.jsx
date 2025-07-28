@@ -7,23 +7,34 @@ function TechTransfer() {
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    const res = await axios.get(`https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY`)
-    setResults(res.data.results)
+    try {
+      const res = await axios.get(
+        `https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY&query=${encodeURIComponent(query)}`
+      )
+      setResults(res.data.results)
+    } catch (err) {
+      console.error('Failed to fetch patents:', err)
+      setResults([])
+    }
   }
 
   return (
     <div className="p-6">
-      <h2 className="text-3xl font-bold mb-4 text-center">🔬 NASA TechTransfer Search</h2>
-      <form onSubmit={handleSearch} className="flex gap-4 justify-center mb-6">
+      <h2 className="text-3xl font-bold mb-4 text-center text-amber-400">🔬 NASA TechTransfer Search</h2>
+     {/* Search Form */}
+      <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-10">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search patents..."
-          className="px-4 py-2 rounded text-black"
+          placeholder="Search NASA patents..."
+          className="flex-1 px-4 py-2 rounded-md text-blue-200 bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           required
         />
-        <button type="submit" className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
+        <button
+          type="submit"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-md font-semibold transition"
+        >
           Search
         </button>
       </form>
