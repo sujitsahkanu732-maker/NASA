@@ -32,46 +32,72 @@ function MarsRover() {
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold mb-4 text-center">🔍 Search Mars Rover Photos</h2>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white p-6">
+      <h2 className="text-4xl font-extrabold mb-6 text-center text-fuchsia-400">
+        🔭 Explore Mars Rover Photos
+      </h2>
 
       <form
         onSubmit={handleSubmit}
-        className="mb-6 flex flex-col sm:flex-row justify-center items-center gap-4"
+        className="mb-8 flex flex-col sm:flex-row justify-center items-center gap-4"
       >
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="px-3 py-2 text-black rounded shadow"
+          className="px-4 py-2 text-gray-800 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
           required
         />
         <button
           type="submit"
-          className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-fuchsia-600 px-5 py-2 rounded-md text-white font-semibold hover:bg-fuchsia-700 transition"
         >
-          Search
+          🔍 Search
         </button>
       </form>
 
-      {loading && <p className="text-center text-yellow-400">Loading...</p>}
-      {error && <p className="text-center text-red-400">{error}</p>}
+      {loading && (
+        <p className="text-center text-yellow-300 text-lg animate-pulse">
+          Loading images from Mars...
+        </p>
+      )}
+      {error && (
+        <p className="text-center text-red-400 text-md">
+          {error}
+        </p>
+      )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {photos.map((photo) => (
-          <div key={photo.id} className="bg-gray-800 p-3 rounded-lg shadow-lg">
+          <div
+            key={photo.id}
+            className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
             <img
               src={photo.img_src}
               alt={`Mars by ${photo.rover.name}`}
-              className="rounded"
+              className="w-full h-60 object-cover"
             />
-            <p className="mt-2 text-sm text-gray-400">
-              {photo.rover.name} - {photo.camera.full_name}
-            </p>
-            <p className="text-xs text-gray-500">Taken on: {photo.earth_date}</p>
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">
+                {photo.rover.name}
+              </h3>
+              <p className="text-sm text-gray-400">
+                {photo.camera.full_name}
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                📅 {photo.earth_date}
+              </p>
+            </div>
           </div>
         ))}
       </div>
+
+      {!loading && photos.length === 0 && !error && (
+        <p className="mt-8 text-center text-gray-400 text-lg">
+          👈 Select a date to see Mars photos!
+        </p>
+      )}
     </div>
   )
 }

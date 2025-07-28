@@ -2,34 +2,30 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function Apod() {
-  const [apodData, setApodData] = useState(null)
+  const [apod, setApod] = useState(null)
 
   useEffect(() => {
     const fetchApod = async () => {
-      try {
-        const res = await axios.get(
-          `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`
-        )
-        setApodData(res.data)
-      } catch (err) {
-        console.error('Failed to fetch APOD:', err)
-      }
+      const res = await axios.get(
+        `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`
+      )
+      setApod(res.data)
     }
-
     fetchApod()
   }, [])
 
+  if (!apod) return <div className="text-center mt-10">Loading...</div>
+
   return (
     <div className="p-6">
-      {apodData ? (
-        <>
-          <h2 className="text-3xl font-bold mb-2">{apodData.title}</h2>
-          <img src={apodData.url} alt="APOD" className="rounded-lg" />
-          <p className="mt-4">{apodData.explanation}</p>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+      <h2 className="text-3xl font-bold mb-4">{apod.title}</h2>
+      <img
+        src={apod.url}
+        alt={apod.title}
+        className="max-w-full mx-auto rounded-lg shadow-lg"
+      />
+      <p className="mt-4 text-lg">{apod.explanation}</p>
+      <p className="mt-2 text-sm text-gray-400">Date: {apod.date}</p>
     </div>
   )
 }
