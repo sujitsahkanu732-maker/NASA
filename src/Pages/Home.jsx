@@ -12,7 +12,7 @@ const groupMembers = [
     email: 'sujitsahkanu732@gmail.com',
     photo: sujitImg,
     linkedIn: 'https://linkedin.com/in/sujit-sah',
-    role: 'Team Lead',
+    role: 'Team Leader (Frontend Developer)',
   },
   {
     name: 'Prashant Aryal',
@@ -20,7 +20,7 @@ const groupMembers = [
     email: 'prashant@gmail.com',
     photo: prashantImg,
     linkedIn: 'https://linkedin.com/in/prashant-aryal',
-    role: 'Frontend Developer',
+    role: 'Backend Developer',
   },
   {
     name: 'Dipesh Manandhar',
@@ -71,10 +71,15 @@ function Home() {
         </motion.div>
       </div>
 
-      <h2 className="text-xl md:text-2xl font-medium mb-2">👨‍🚀 NASA</h2>
-      <h1 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-4 text-center">
+      <motion.h1
+        className="text-4xl md:text-5xl font-bold text-yellow-300 mb-4 text-center"
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+      >
         Welcome to NASA Explorer
-      </h1>
+      </motion.h1>
+
       <p className="text-lg md:text-xl text-gray-300 mb-12 text-center max-w-2xl">
         Our space journey toward the future begins here. Explore the cosmos with curiosity, data, and imagination.
       </p>
