@@ -9,10 +9,18 @@ function Footer() {
       </p>
       <p>
         Contact us: <br />
-        📧 <a href="sujitsahkanu732@gmail.com" className="text-blue-400 hover:underline">
+        📧{" "}
+        <a
+          href="mailto:sujitsahkanu732@gmail.com"
+          className="text-blue-400 hover:underline"
+        >
           sujitsahkanu732@gmail.com
-        </a> | 📞 <a href="+977-9808266236" className="text-blue-400 hover:underline">
-          
+        </a>{" "}
+        | 📞{" "}
+        <a
+          href="tel:+9779808266236"
+          className="text-blue-400 hover:underline"
+        >
           +977-9808266236
         </a>
       </p>
