@@ -9,10 +9,10 @@ const groupMembers = [
   {
     name: 'Sujit Sah',
     address: 'Janakpur, Nepal',
-    email: 'sujitsahkanu732@gmail.com',
+    email: 'sujit@gmail.com',
     photo: sujitImg,
     linkedIn: 'https://linkedin.com/in/sujit-sah',
-    role: 'Team Leader (Frontend Developer)',
+    role: 'Team Leader(Frontend Developer)',
   },
   {
     name: 'Prashant Aryal',
