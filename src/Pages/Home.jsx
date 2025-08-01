@@ -12,7 +12,7 @@ const groupMembers = [
     email: 'sujit@gmail.com',
     photo: sujitImg,
     linkedIn: 'https://linkedin.com/in/sujit-sah',
-    role: 'Team Leader(Frontend Developer)',
+    
   },
   {
     name: 'Prashant Aryal',
@@ -20,7 +20,7 @@ const groupMembers = [
     email: 'prashant@gmail.com',
     photo: prashantImg,
     linkedIn: 'https://linkedin.com/in/prashant-aryal',
-    role: 'Backend Developer',
+    
   },
   {
     name: 'Dipesh Manandhar',
@@ -28,7 +28,7 @@ const groupMembers = [
     email: 'dipesh@gmail.com',
     photo: dipeshImg,
     linkedIn: 'https://linkedin.com/in/dipesh-manandhar',
-    role: 'Data & API Specialist',
+    
   },
   {
     name: 'Bibek Rai',
@@ -36,7 +36,7 @@ const groupMembers = [
     email: 'bibek@gmail.com',
     photo: bibekImg,
     linkedIn: 'https://linkedin.com/in/bibek-rai',
-    role: 'UI Designer',
+    
   },
 ]
 
