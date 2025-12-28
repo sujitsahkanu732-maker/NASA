@@ -2,10 +2,10 @@ function Footer() {
   return (
     <footer className="bg-black py-6 text-center text-sm text-gray-400 space-y-2">
       <p>
-        © {new Date().getFullYear()} NASA Explorer | Built with 🚀 by Students
+        © {new Date().getFullYear()} NASA Explorer | Built with 🚀 Sujit Sah
       </p>
       <p>
-        Developed by Project Members 🇳🇵
+        Developed by Sujit Sah 🇳🇵
       </p>
       <p>
         Contact us: <br />
