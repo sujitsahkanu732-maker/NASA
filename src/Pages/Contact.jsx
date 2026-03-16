@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import sujitImg from '../assets/sujit.jpg'
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -19,6 +20,15 @@ function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white py-10 px-6">
       <div className="max-w-2xl mx-auto bg-gray-800 p-8 rounded-xl shadow-lg">
+        {/* Profile Photo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src={sujitImg}
+            alt="Profile"
+            className="w-32 h-32 rounded-full border-4 border-yellow-400 object-cover shadow-lg"
+          />
+        </div>
+        
         <h1 className="text-center text-3xl font-bold text-yellow-400 mb-2">👨‍💻 Sujit Sah</h1>
         <h2 className="text-center text-2xl font-semibold mb-6 text-white">📬 Get in Touch</h2>
 
@@ -64,7 +74,36 @@ function Contact() {
             If you're interested in working together or just want to say hello, feel free to reach out using the form below.
           </p>
         </div>
-
+        {/* Qualifications */}
+        <div className="mb-8 bg-gray-700 p-6 rounded-lg">
+          <h3 className="text-xl font-bold text-yellow-300 mb-4">🎓 Qualifications & Skills</h3>
+          <div className="space-y-4 text-gray-300 text-sm">
+            <div>
+              <h4 className="font-semibold text-white mb-2">📚 Education</h4>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Bachelor's Degree in Information Technology</li>
+                <li>Full-Stack Web Development Certification</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-2">💻 Technical Skills</h4>
+              <ul className="list-disc list-inside space-y-1">
+                <li><strong>Frontend:</strong> React, JavaScript, Tailwind CSS, HTML5, CSS3</li>
+                <li><strong>Backend:</strong> Node.js, Express.js, MongoDB, REST APIs</li>
+                <li><strong>Tools:</strong> Git, Vite, ESLint, VS Code</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-2">🏆 Expertise</h4>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Full-Stack Web Development</li>
+                <li>Responsive Web Design</li>
+                <li>API Integration & Development</li>
+                <li>Database Design & Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         {/* Contact Form */}
         {submitted ? (
           <p className="text-green-400 text-center text-lg font-medium">
